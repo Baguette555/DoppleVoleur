@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\PROG CPP\\JeuTextuel\\",
+  "WorkspaceRootPath": "C:\\Users\\Maxime Gaming\\Desktop\\JeuTextuel\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\PROG CPP\\JeuTextuel\\JeuTextuel\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Maxime Gaming\\Desktop\\JeuTextuel\\JeuTextuel\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:JeuTextuel\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\PROG CPP\\JeuTextuel\\JeuTextuel\\Profil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Maxime Gaming\\Desktop\\JeuTextuel\\JeuTextuel\\Profil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:JeuTextuel\\Profil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\PROG CPP\\JeuTextuel\\JeuTextuel\\Profil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Maxime Gaming\\Desktop\\JeuTextuel\\JeuTextuel\\Profil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:JeuTextuel\\Profil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -28,9 +28,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Source.cpp",
-              "DocumentMoniker": "F:\\PROG CPP\\JeuTextuel\\JeuTextuel\\Source.cpp",
+              "DocumentMoniker": "C:\\Users\\Maxime Gaming\\Desktop\\JeuTextuel\\JeuTextuel\\Source.cpp",
               "RelativeDocumentMoniker": "JeuTextuel\\Source.cpp",
-              "ToolTip": "F:\\PROG CPP\\JeuTextuel\\JeuTextuel\\Source.cpp",
+              "ToolTip": "C:\\Users\\Maxime Gaming\\Desktop\\JeuTextuel\\JeuTextuel\\Source.cpp",
               "RelativeToolTip": "JeuTextuel\\Source.cpp",
               "ViewState": "AQIAADAAAAAAAAAAAAAhwEUAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -41,27 +41,25 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Profil.cpp",
-              "DocumentMoniker": "F:\\PROG CPP\\JeuTextuel\\JeuTextuel\\Profil.cpp",
+              "DocumentMoniker": "C:\\Users\\Maxime Gaming\\Desktop\\JeuTextuel\\JeuTextuel\\Profil.cpp",
               "RelativeDocumentMoniker": "JeuTextuel\\Profil.cpp",
-              "ToolTip": "F:\\PROG CPP\\JeuTextuel\\JeuTextuel\\Profil.cpp",
+              "ToolTip": "C:\\Users\\Maxime Gaming\\Desktop\\JeuTextuel\\JeuTextuel\\Profil.cpp",
               "RelativeToolTip": "JeuTextuel\\Profil.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-03T16:08:09.808Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-03T16:08:09.808Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Profil.h",
-              "DocumentMoniker": "F:\\PROG CPP\\JeuTextuel\\JeuTextuel\\Profil.h",
+              "DocumentMoniker": "C:\\Users\\Maxime Gaming\\Desktop\\JeuTextuel\\JeuTextuel\\Profil.h",
               "RelativeDocumentMoniker": "JeuTextuel\\Profil.h",
-              "ToolTip": "F:\\PROG CPP\\JeuTextuel\\JeuTextuel\\Profil.h",
+              "ToolTip": "C:\\Users\\Maxime Gaming\\Desktop\\JeuTextuel\\JeuTextuel\\Profil.h",
               "RelativeToolTip": "JeuTextuel\\Profil.h",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAACYAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-03T16:11:39.182Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-03T16:11:39.182Z"
             }
           ]
         }

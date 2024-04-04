@@ -9,7 +9,7 @@
 #include <cstdlib>
 using namespace std;
 
-void pressEnter() {
+void pressEnter() {			// SALUT SAL JE ETSTE
 	string enter;
 	getline(cin, enter);
 }
