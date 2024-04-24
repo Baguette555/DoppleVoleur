@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "JeuTextuel\\Source.cpp",
               "ToolTip": "C:\\Users\\Maxime Gaming\\Desktop\\JeuTextuel\\JeuTextuel\\Source.cpp",
               "RelativeToolTip": "JeuTextuel\\Source.cpp",
-              "ViewState": "AQIAADAAAAAAAAAAAAAhwEUAAAAgAAAA",
+              "ViewState": "AQIAAKUAAAAAAAAAAAAAAK0AAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-03T16:22:14.474Z",
               "EditorCaption": ""
@@ -47,7 +47,8 @@
               "RelativeToolTip": "JeuTextuel\\Profil.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-03T16:08:09.808Z"
+              "WhenOpened": "2024-04-03T16:08:09.808Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -59,7 +60,8 @@
               "RelativeToolTip": "JeuTextuel\\Profil.h",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAACYAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-03T16:11:39.182Z"
+              "WhenOpened": "2024-04-03T16:11:39.182Z",
+              "EditorCaption": ""
             }
           ]
         }

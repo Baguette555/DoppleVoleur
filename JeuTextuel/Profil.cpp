@@ -3,17 +3,17 @@
 
 Profil::Profil()
 {
-	setDescription("Profil de (prenom) - Ancien copain de (prenom)");
+	setDescription("Profil a retenir -- Ancien copain de Alex");
 	setAge(26);
 	setTaille(180);
 	setHasWork(true);
-	if (getHasWork()) {		// am about to destroy this guy right here
+	if (getHasWork()) {
 		setHasWork("Oui");
 	}
 	else {
 		setHasWork("Non");
 	}
-	setProfession("Programmeur");
+	setProfession("Informaticien");
 	setNationalite("Francais");
 	setLovesAnimals(true);
 	setAnimaux("Chien");
@@ -69,7 +69,7 @@ Nationalite Profil::getNationalite()
 
 std::string Profil::getNationalite_ToString()
 {
-	switch (nationaliteOrigine) {		// ON VA SE faIRE CANCEL LETSGOO!!!
+	switch (nationaliteOrigine) {
 	case Nationalite::Francais:
 		return "Francais";
 	case Nationalite::Anglais:
@@ -120,14 +120,14 @@ Profession Profil::getProfession()
 std::string Profil::getProfession_ToString()
 {
 	switch (professionTravail) {
-	case Profession::Programmeur:
-		return "Programmeur";
+	case Profession::Informaticien:
+		return "Informaticien";
 	case Profession::Musicien:
 		return "Musicien";
 	case Profession::Investisseur:
 		return "Investisseur";
 	default:
-		return "Programmeur";
+		return "Informaticien";
 	}
 }
 
@@ -138,8 +138,8 @@ void Profil::setProfession(Profession p)
 
 void Profil::setProfession(std::string userProfession)
 {
-	if (userProfession == "Programmeur") {
-		professionTravail = Profession::Programmeur;
+	if (userProfession == "Informaticien") {
+		professionTravail = Profession::Informaticien;
 	}
 	else if (userProfession == "Musicien") {
 		professionTravail = Profession::Musicien;
@@ -148,7 +148,7 @@ void Profil::setProfession(std::string userProfession)
 		professionTravail = Profession::Investisseur;
 	}
 	else {
-		professionTravail = Profession::Programmeur;
+		professionTravail = Profession::Informaticien;
 	}
 }
 

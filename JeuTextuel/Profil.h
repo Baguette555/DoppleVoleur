@@ -2,15 +2,15 @@
 #include <iostream>
 
 enum class Nationalite {		// Avant de poser des questions sur pourquoi il y a des énum,
-	Francais,					// c'est simple : on a prévu de faire de l'aléatoire pour chaque
-	Anglais,					// catégorie. On le garde au cas où, on ne sait jamais.
+	Francais,					// c'est simple : on a prévu de faire de l'aléatoire pour chaque catégorie.
+	Anglais,
 	Espagnol,
 	Italien,
 	Asiate
 };
 
 enum class Profession {
-	Programmeur,
+	Informaticien,
 	Musicien,
 	Investisseur
 };
