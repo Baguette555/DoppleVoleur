@@ -48,7 +48,7 @@ std::string Profil::getDescription()
 
 void Profil::setDescription(std::string d)
 {
-	description = d;
+	description  = d;
 }
 
 bool Profil::getHasWork()

@@ -27,4 +27,18 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="maison.txt">
+      <Filter>Fichiers de ressources</Filter>
+    </Text>
+    <Text Include="meter.txt">
+      <Filter>Fichiers de ressources</Filter>
+    </Text>
+    <Text Include="colere.txt">
+      <Filter>Fichiers de ressources</Filter>
+    </Text>
+    <Text Include="heureux.txt">
+      <Filter>Fichiers de ressources</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

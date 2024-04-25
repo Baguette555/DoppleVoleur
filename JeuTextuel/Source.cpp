@@ -72,6 +72,51 @@ void afficherLentement(const string& message, chrono::milliseconds duree) {			//
 	}
 }
 
+void affichageMaison(string maison) {
+	fstream file(maison);
+
+	while (!file.eof()) {
+		string temp;
+		if (getline(file, temp)) {
+			cout << temp << endl;
+		}
+	}
+}
+
+void affichageSusMeter(string meter) {
+	fstream file(meter);
+
+	while (!file.eof()) {
+		string temp;
+		if (getline(file, temp)) {
+			cout << temp << endl;
+		}
+	}
+}
+
+void affichageHeureux(string heureux) {
+	fstream file(heureux);
+
+	while (!file.eof()) {
+		string temp;
+		if (getline(file, temp)) {
+			cout << temp << endl;
+		}
+	}
+}
+
+void affichageColere(string colere) {
+	fstream file(colere);
+
+	while (!file.eof()) {
+		string temp;
+		if (getline(file, temp)) {
+			cout << temp << endl;
+		}
+	}
+}
+
+ 
 
 void intro() {
 	afficherLentement("Bienvenue a DoppleVoleur, un jeu de memoire.", chrono::milliseconds(75));
@@ -99,7 +144,7 @@ void intro() {
 	this_thread::sleep_for(chrono::seconds(3));
 	cout << "Vous devez repondre a 15 questions pendant le repas." << endl;
 	this_thread::sleep_for(chrono::seconds(3));
-	cout << "A chaque mauvaise reponse, votre suspicionMeter peut augmenter jusqu'a +15." << endl;
+	cout << "A chaque mauvaise reponse, votre suspicionMeter peut augmenter jusqu'a +20." << endl;
 	this_thread::sleep_for(chrono::seconds(3));
 	cout << "A chaque bonne reponse, votre suspicionMeter diminue de 4." << endl;
 	this_thread::sleep_for(chrono::seconds(3));
@@ -168,7 +213,10 @@ void intro() {
 	afficherLentement(" - 21h28", chrono::milliseconds(100));
 	this_thread::sleep_for(chrono::seconds(1));
 	cout << endl;
+
 	//cout << "Image de maison guys" << endl;
+	affichageMaison("maison.txt");
+
 	afficherLentement("[ENTREE] pour rentrer dans la maison", chrono::milliseconds(32));
 	pressEnter();
 	system("cls");
@@ -186,24 +234,31 @@ void question1(int randomQuestion, int& vieActuelle)
 		cout << "Quel age as-tu ?" << endl;
 		cout << endl;
 		cout << "1. 99 ans.\n2. Le meme age que Trump.\n3. 26 ans.\n4. 36 ans.\n";
+		cout << endl;
+		cout << "Reponse : ";
 		cin >> reponse1;
+		cout << endl;
 
 		switch (reponse1) // réponse aux questions + point gagné ou perdu
 		{
 		case 1:
 			cout << "Eh bah ! On peut dire que tu as le sens de l'humour !" << endl << "(+15 suspicion -5 humour (= +10))" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 10;
 			break;
 		case 2:
 			cout << "Ha. Ha. Tres drole..." << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15; // gagner 15 points ce qui fait monter le suspicious meter 
 			break;
 		case 3:
 			cout << "Tu ne les fais pas !" << endl << "(-4 suspicion, bonne reponse)" << endl;
+			affichageHeureux("heureux.txt");
 			vieActuelle -= 4; // perdre 4 points ce qui fait redescendre le suspicious meter
 			break;
 		default:
 			cout << "C'est pas ce qu'a dit notre fille..." << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 		}
 		this_thread::sleep_for(chrono::seconds(3));
@@ -222,24 +277,31 @@ void question2(int randomQuestion, int& vieActuelle)
 		cout << "Tu as un travail ?" << endl;
 		cout << endl;
 		cout << "1. Oui, je travaille !\n2. Pourquoi faire ?\n3. Non, je suis chomeur.\n4. En vrai... flemme.";
+		cout << endl;
+		cout << "Reponse : ";
 		cin >> reponse2;
+		cout << endl;
 
 		switch (reponse2)
 		{
 		case 1:
 			cout << "Ah c'est super ca !" << endl << "(-4 suspicion, bonne reponse)" << endl;
+			affichageHeureux("heureux.txt");
 			vieActuelle -= 4;
 			break;
 		case 2:
 			cout << "Et bah pour gagner de l'argent neuneu" << endl << "(+15 suspicion +3 'neuneu' (= +18))" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 18;
 			break;
 		case 3:
 			cout << "Notre fille nous avait pourtant dit le contraire ?" << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 			break;
 		default:
 			cout << "C'est ca ouais..." << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 		}
 		this_thread::sleep_for(chrono::seconds(3));
@@ -258,19 +320,25 @@ void question3(int randomQuestion, int& vieActuelle)
 		cout << "Tu fais quelle taille ?" << endl;
 		cout << endl;
 		cout << "1. 1 metre 80.\n2. 2 metres, bam !\n3. 1 metre 78.\n";
+		cout << endl;
+		cout << "Reponse : ";
 		cin >> reponse3;
+		cout << endl;
 
 		switch (reponse3) {
 		case 1:
 			cout << "C'est grand !" << endl << "(-4 suspicion, bonne reponse)" << endl;
+			affichageHeureux("heureux.txt");
 			vieActuelle -= 4;
 			break;
 		case 2:
 			cout << "C'est pas ce qu'elle nous a dit notre fille..." << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 			break;
 		default:
 			cout << "T'as retrecit ?" << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 		}
 		this_thread::sleep_for(chrono::seconds(3));
@@ -289,24 +357,31 @@ void question4(int randomQuestion, int& vieActuelle)
 		cout << "Tu as des freres ?" << endl;
 		cout << endl;
 		cout << "1. Oh non non non, trop chiant.\n2. Non, je suis fils unique.\n3. Oui, et j'en ai 10.\n4. Non, mais j'ai 2 soeurs !\n";
+		cout << endl;
+		cout << "Reponse : ";
 		cin >> reponse4;
+		cout << endl;
 
 		switch (reponse4)
 		{
 		case 1:
 			cout << "Tu pourrais mieux parler quand meme" << endl << "(+15 suspicion +3 impoli (= +18))" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 18;
 			break;
 		case 2:
 			cout << "Oh d'accord" << endl << "(-4 suspicion, bonne reponse)" << endl;
+			affichageHeureux("heureux.txt");
 			vieActuelle -= 4;
 			break;
 		case 3:
 			cout << "Ca fait beaucoup la nan ?" << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 			break;
 		default:
 			cout << "Elle nous avait pas dit ca..." << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 		}
 		this_thread::sleep_for(chrono::seconds(3));
@@ -325,24 +400,31 @@ void question5(int randomQuestion, int& vieActuelle)
 		cout << "Tu fais quel metier actuellement ?" << endl;
 		cout << endl;
 		cout << "1. Je suis Tueur a Gages\n2. Je suis Illustrateur !\n3. Je suis l'Informaticien du quartier.\n4. Je suis HOKAGUE !\n";
+		cout << endl;
+		cout << "Reponse : ";
 		cin >> reponse5;
+		cout << endl;
 
 		switch (reponse5)
 		{
 		case 1:
 			cout << "Je trouve pas ca drole..." << endl << "(+18 grosse suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 18;
 			break;
 		case 2:
 			cout << "Pourtant notre fille nous a montre des dessins et c'etait franchement affreux" << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 			break;
 		case 3:
 			cout << "Oh super, j'ai un probleme avec mon ordinateur, tu pourras m'aider ahah" << endl << "(-4 suspicion, bonne reponse)" << endl;
+			affichageHeureux("heureux.txt");
 			vieActuelle -= 4;
 			break;
 		default:
 			cout << "Hoka quoi ????" << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 		}
 		this_thread::sleep_for(chrono::seconds(3));
@@ -361,24 +443,31 @@ void question6(int randomQuestion, int& vieActuelle)
 		cout << "Tu penses avoir quelle qualite" << endl;
 		cout << endl;
 		cout << "1. Je suis plutot poli.\n2. Je suis le ROI DES PIRATES !\n3. Je joue pas Pyke...\n4. Je fais attention aux petits details.\n";
+		cout << endl;
+		cout << "Reponse : ";
 		cin >> reponse6;
+		cout << endl;
 
 		switch (reponse6)
 		{
 		case 1:
 			cout << "C'est une bonne qualitee !" << endl << "(-4 suspicion, bonne reponse)" << endl;
+			affichageHeureux("heureux.txt");
 			vieActuelle -= 4;
 			break;
 		case 2:
 			cout << "On est pas dans One Piece..." << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 			break;
 		case 3:
 			cout << "Les joueurs Pyke sont meme pas gold non ?" << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 			break;
 		default:
 			cout << "Notre fille nous a dit que tu etais vachement maladroit..." << endl << "(+10 petite suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 10;
 		}
 		this_thread::sleep_for(chrono::seconds(3));
@@ -397,24 +486,31 @@ void question7(int randomQuestion, int& vieActuelle)
 		cout << "Quel est ton plus gros defaut ?" << endl;
 		cout << endl;
 		cout << "1. J'aime TFT.\n2. Je suis plutot maladroit..\n3. Je suis perfectionniste !\n4. Je suis vachement jaloux..\n";
+		cout << endl;
+		cout << "Reponse : ";
 		cin >> reponse7;
+		cout << endl;
 
 		switch (reponse7)
 		{
 		case 1:
 			cout << "C'est HONTEUX" << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 			break;
 		case 2:
 			cout << "Oh, je vois. Pas de vases pour toi alors !" << endl << "(-4 suspicion, bonne reponse)" << endl;
+			affichageHeureux("heureux.txt");
 			vieActuelle -= 4;
 			break;
 		case 3:
 			cout << "C'est un sacre defaut ca." << endl << "(+10 petite suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 10;
 			break;
 		default:
 			cout << "Et bah bravo..." << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 		}
 		this_thread::sleep_for(chrono::seconds(3));
@@ -433,24 +529,31 @@ void question8(int randomQuestion, int& vieActuelle)
 		cout << "Tu aimes les animaux ?" << endl;
 		cout << endl;
 		cout << "1. Oui j'adore !\n2. Bof...\n3. Non surtout pas ! Je suis allergique !\n4. Qui peut aimer ca !?\n";
+		cout << endl;
+		cout << "Reponse : ";
 		cin >> reponse8;
+		cout << endl;
 
 		switch (reponse8)
 		{
 		case 1:
 			cout << "Oh super ! On en a plein !" << endl << "(-4 suspicion, bonne reponse)" << endl;
+			affichageHeureux("heureux.txt");
 			vieActuelle -= 4;
 			break;
 		case 2:
 			cout << "Ah d'accord..." << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 			break;
 		case 3:
 			cout << "Ah mince !!!" << endl << "(+5 suspicion, allergie issue)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 5;
 			break;
 		default:
 			cout << "Nous ?!!" << endl << "(+18 suspicion (provoc.))" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 18;
 		}
 		this_thread::sleep_for(chrono::seconds(3));
@@ -469,24 +572,31 @@ void question9(int randomQuestion, int& vieActuelle)
 		cout << "Quel est le style de film que tu preferes ?" << endl;
 		cout << endl;
 		cout << "1. Je suis plutot films d'action.\n2. Les films sur les genocides.\n3. Les films Romantiques.\n4. Les films de Science-Fiction.\n";
+		cout << endl;
+		cout << "Reponse : ";
 		cin >> reponse9;
+		cout << endl;
 
 		switch (reponse9)
 		{
 		case 1:
 			cout << "Oh nous aussi !" << endl << "(-4 suspicion, bonne reponse)" << endl;
+			affichageHeureux("heureux.txt");
 			vieActuelle -= 4;
 			break;
 		case 2:
 			cout << "Ouh la... un gout tres particulier..." << endl << "(+18 grosse suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 18;
 			break;
 		case 3:
 			cout << "Ho nooo CRINGE" << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 			break;
 		default:
 			cout << "Youhou les vaisseaux... piou piouuu" << endl << "(+8 tres petite suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 8;
 		}
 		this_thread::sleep_for(chrono::seconds(3));
@@ -505,24 +615,31 @@ void question10(int randomQuestion, int& vieActuelle)
 		cout << "Tu es de quelle Nationalite ?" << endl;
 		cout << endl;
 		cout << "1. Je suis purement Francais.\n2. Je viens de slovaquie lo\n3. Je suis Chinois.\n4. Je suis Anglais.\n";
+		cout << endl;
+		cout << "Reponse : ";
 		cin >> reponse10;
+		cout << endl;
 
 		switch (reponse10)
 		{
 		case 1:
 			cout << "Un pur francais evidemment !" << endl << "(-4 suspicion, bonne reponse)" << endl;
+			affichageHeureux("heureux.txt");
 			vieActuelle -= 4;
 			break;
 		case 2:
 			cout << "C'est ou ?" << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 			break;
 		case 3:
 			cout << "Mhh mhh, j'allais dire pareil." << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 			break;
 		default:
 			cout << "Oui oui et moi j'suis La reine d'angleterre... (R.I.P)" << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 		}
 		this_thread::sleep_for(chrono::seconds(3));
@@ -541,24 +658,31 @@ void question11(int randomQuestion, int& vieActuelle)
 		cout << "Tu as des animaux ?" << endl;
 		cout << endl;
 		cout << "1. Oui mon ex.\n2. Oui j'ai un chien !\n3. Non je suis allergique..\n4. Jamais de la vie...\n";
+		cout << endl;
+		cout << "Reponse : ";
 		cin >> reponse11;
+		cout << endl;
 
 		switch (reponse11)
 		{
 		case 1:
 			cout << ". . ." << endl << "(+18 suspicion (impoli))" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 18;
 			break;
 		case 2:
 			cout << "Ah, tu aurais du l'amener !" << endl << "(-4 suspicion, bonne reponse)" << endl;
+			affichageHeureux("heureux.txt");
 			vieActuelle -= 4;
 			break;
 		case 3:
 			cout << "Oh zut !" << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 			break;
 		default:
 			cout << "Dommage..." << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 		}
 		this_thread::sleep_for(chrono::seconds(3));
@@ -577,24 +701,31 @@ void question12(int randomQuestion, int& vieActuelle)
 		cout << "Tu as un hobby ?" << endl;
 		cout << endl;
 		cout << "1. Frapper des vielles.\n2. Je fais du sport !\n3. J'aime rien, donc je fais rien.\n4. Oui jouer aux jeux videos !\n";
+		cout << endl;
+		cout << "Reponse : ";
 		cin >> reponse12;
+		cout << endl;
 
 		switch (reponse12)
 		{
 		case 1:
 			cout << "Je ne vais rien dire..." << endl << "(+18 grosse suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 18;
 			break;
 		case 2:
 			cout << "Ca ne se voit pas... hum hum." << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 			break;
 		case 3:
 			cout << "Tous les memes c'est dingue les jeunes." << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 			break;
 		default:
 			cout << "C'est super !" << endl << "(-4 suspicion, bonne reponse)" << endl;
+			affichageHeureux("heureux.txt");
 			vieActuelle -= 4;
 		}
 		this_thread::sleep_for(chrono::seconds(3));
@@ -613,24 +744,31 @@ void question13(int randomQuestion, int& vieActuelle)
 		cout << "Vous aimez faire quoi ensemble ?" << endl;
 		cout << endl;
 		cout << "1. Des combats de sable laser !\n2. Lire des livres.\n3. Des unboxing de RAID SHADOW LEGENDS qui sponsorise le date d'aujourd'hui !\n4. Des balades en poney !\n";
+		cout << endl;
+		cout << "Reponse : ";
 		cin >> reponse13;
+		cout << endl;
 
 		switch (reponse13)
 		{
 		case 1:
 			cout << "C'est assez particulier" << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 			break;
 		case 2:
 			cout << "Interessant, interessant..." << endl << "(-4 suspicion, bonne reponse)" << endl;
+			affichageHeureux("heureux.txt");
 			vieActuelle -= 4;
 			break;
 		case 3:
 			cout << "Avec le code promo ILOVERAID !!!!" << endl << "(+10 suspicion et + 1 code promo)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 10;
 			break;
 		default:
 			cout << "Ma fille n'aime pas les poneys..." << endl << "(+17 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 17;
 		}
 		this_thread::sleep_for(chrono::seconds(3));
@@ -649,24 +787,31 @@ void question14(int randomQuestion, int& vieActuelle)
 		cout << "Quelle est la qualite que tu preferes chez notre fille ?" << endl;
 		cout << endl;
 		cout << "1. Son sens de l'organisation\n2. Sa devotion envers le Christ Cosmique ALIAS le grand Seigneur.\n3. Son humour plus que douteux..\n4. Sa magnifique barbe..?\n";
+		cout << endl;
+		cout << "Reponse : ";
 		cin >> reponse14;
+		cout << endl;
 
 		switch (reponse14)
 		{
 		case 1:
 			cout << "C'est vrai qu'elle est plutot maniaque" << endl << "(-4 suspicion, bonne reponse)" << endl;
+			affichageHeureux("heureux.txt");
 			vieActuelle -= 4;
 			break;
 		case 2:
 			cout << "Encore lui ?" << endl << "(+12 suspicion (questionnement))" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 			break;
 		case 3:
 			cout << "Comment ca ???" << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 			break;
 		default:
 			cout << "Tu veux qu'on en parle de la tienne ?" << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 		}
 		this_thread::sleep_for(chrono::seconds(3));
@@ -685,24 +830,31 @@ void question15(int randomQuestion, int& vieActuelle)
 		cout << "Quelle est la chose qui te terrifie le plus ?" << endl;
 		cout << endl;
 		cout << "1. Les araignees.\n2. La couleur noire.\n3. Alex !\n4. Etre oublie.\n";
+		cout << endl;
+		cout << "Reponse : ";
 		cin >> reponse15;
+		cout << endl;
 
 		switch (reponse15)
 		{
 		case 1:
 			cout << "Oh c'est vrai que c'est flippant" << endl << "(-4 suspicion, bonne reponse)" << endl;
+			affichageHeureux("heureux.txt");
 			vieActuelle -= 4;
 			break;
 		case 2:
 			cout << "Tu as peur de la couleur noire ?" << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 			break;
 		case 3:
 			cout << "OHHH PARLE MIEUX DE NOTRE FILLE LA NON MAIS TU T'ES CRU OU ?!" << endl << "(+18 suspicion (provoc.))" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 18;
 			break;
 		default:
 			cout << "Mhh.. d'aaaccooord...." << endl << "(+15 suspicion)" << endl;
+			affichageColere("colere.txt");
 			vieActuelle += 15;
 		}
 		this_thread::sleep_for(chrono::seconds(3));
@@ -719,8 +871,6 @@ int main()
 	int vieActuelle = 0; // initialisez la vie actuelle à 0
 	int questionsPosees[15] = { 0 }; // tableau pour suivre les questions deja posees, initialisee a 0
 	int questionCompteur = 0; // compteur pour savoir si victoire ou non
-	string familleHeureuse = "Heureux.txt"; // initialisation .txt
-	string SuspectMeter = "suspect-meter.txt"; // texte suspect meter
 	//------------------INITIALISATION--------------------------
 
 	while (vieActuelle > 0 && vieActuelle < 100)		// Est sensé bloquer à 0 et 100
@@ -742,23 +892,8 @@ int main()
 		int randomQuestion = aleatoire(questionsPosees, 15); // passer le tableau des questions deja posees et leur taille
 		questionsPosees[randomQuestion - 1] = randomQuestion; // mettre à jour le tableau avec la nouvelle question
 
-		////-------AFFICHAGE IMAGE----------
-		//ifstream fichier(familleHeureuse);
-		//string ligne;
-		//while (getline(fichier, ligne))
-		//{
-		//	cout << ligne << endl;
-		//}
-		////-------AFFICHAGE IMAGE----------
+		affichageSusMeter("meter.txt");
 
-		//-------AFFICHAGE IMAGE----------
-		ifstream fichier(SuspectMeter);
-		string ligneSusMeter;
-		while (getline(fichier, ligneSusMeter))
-		{
-			cout << ligneSusMeter << endl;
-		}
-		//-------AFFICHAGE IMAGE----------
 		cout << endl;
 
 		question1(randomQuestion, vieActuelle);
@@ -778,7 +913,6 @@ int main()
 		question15(randomQuestion, vieActuelle);
 
 		questionCompteur++;
-		fichier.close(); // fermeture image
 
 	} while (questionCompteur < 15); // continuer tant que la vie actuelle est inferieur a 100 OU on joue les 15 questions		// vieActuelle < vieMax &&
 
@@ -795,8 +929,8 @@ int main()
 			vieActuelle = 100;
 		}
 
-		srand(time(0));
-		vieActuelle = rand() % 100; //random sur 100%
+		//srand(time(0));
+		//vieActuelle = rand() % 100; //prise de la valeur suspect meter puis calcul de l'aléatoire pour savoir si on win ou pas (/roll garry's mod be like)
 
 
 
